@@ -33,7 +33,9 @@ Usage
 * --open  [ARG]       : It'll open the file with a specified program if you specify to open it
 * --help              : Gives help...
 
-@QWERTYghri fucking help me
+@QWERTYghri : fucking help me
+
+
 ]]
 }
 
@@ -63,7 +65,7 @@ local funcList =
         end,
         ["--help"] =
         function ( argPos )
-
+                io.write ( msgList.helpInfo )
         end
 }
 
@@ -73,6 +75,7 @@ local function argParse ()
                 errMsg ( string.format ( "No input is given...\n\n%s",  msgList.helpInfo ) )
         end
         
+        -- Vars
         local i = 1
 
         while ( i <= #arg ) do --pairs won't do good here, Also seems like for loops are much more references that actual variables. so fuck this
